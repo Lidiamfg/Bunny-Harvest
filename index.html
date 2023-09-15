@@ -12,14 +12,19 @@
 <body>
     <main>
         <div id="game-intro">
-            <img src="./img/grass-tile.png" alt="" class="logo-img" />
-
+            <img src="./img/BunnyHarvest_logo.png" alt="Bunny Harvest Logo" class="logo-img" />
+            <br/>
+            <button id="start-button">Start Game!</button>
+            <p>Use your keyboard to control your Bunny!</p>
+            <img src="./img/keyboard.png" alt="WASD commands" class="keyboard-img" />
         </div>
 
         <div id="game-container">
-
-
+            <div id="game-screen">
+                <p>Apples picked: <span id="score">0</span></p>
+            </div>
         </div>
+        
 
         <div id="game-end">
 
@@ -28,7 +33,8 @@
     </main>
 
 
-
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
 
