@@ -28,25 +28,51 @@ class Player {
     }
     
     updatePosition() {
-        this.left += this.directionX
-        /*if (this.left < 50) {
-            this.left = 50
-        } else if (this.left > this.gameScreen.clientWidth - 50 - this.width) {
-            this.left = this.gameScreen.clientWidth - 50 - this.width
-        } else {
-            
+       /* if(this.left < 230 ){
+            this.left = 230;
+        }else if ( this.left > this.gameScreen.clientWidth-50-35){
+            this.left = this.gameScreen.clientWidth-50-35
+        } else{
+            this.left += this.directionX
+        }
+        
+        if(this.top < 60) {
+            this.top = 60;
+        } else if (this.top > this.gameScreen.clientHeight-60){
+            this.top = this.gameScreen.clientHeight-60
+        }
+         else {
+            this.top += this.directionY
         }*/
-        this.top += this.directionY
-        /*if (this.top < 20) {
-            this.top = 20
-        } else if (this.top > this.gameScreen.clientHeight - 20 - this.height) {
-            this.top = this.gameScreen.clientHeight - 20 - this.height
-        } else {
+        
+        if (this.left < 25 && this.top > 120 && this.top < this.gameScreen.clientHeight-60-210){
+            this.left = 25;
+        } else if (this.top < 130 && /*this.left > 10 &&*/ this.left < 220){
+            this.top = 130;
+        } else if(this.left < 230 && /*this.top > 40 &&*/ this.top < 130){
+            this.left = 230;
+        } else if (this.top < 40 && /*this.left > 220 &&*/ this.left < this.gameScreen.clientWidth-50-35){
+            this.top = 40;
+        } else if (this.left > this.gameScreen.clientWidth-50-35 && this.top < this.gameScreen.clientHeight-60-200){
+            this.left = this.gameScreen.clientWidth-50-35;
+        }else if (this.top > this.gameScreen.clientHeight-60-210 && this.left > this.gameScreen.clientWidth-50-200 ){
+            this.top = this.gameScreen.clientHeight-60-210;
+        } else if (this.left > this.gameScreen.clientWidth-50-210 && this.top > this.gameScreen.clientHeight-60-210){
+            this.left = this.gameScreen.clientWidth-50-210;
+        } else if (this.top > this.gameScreen.clientHeight-60-50 && this.left > 205){
+            this.top = this.gameScreen.clientHeight-60-50;
+        } else if (this.left < 215 && this.top > this.gameScreen.clientHeight-60-210){
+            this.left = 215;
+        } else if (this.top > this.gameScreen.clientHeight-60-220 && this.left < 210 ){
+            this.top = this.gameScreen.clientHeight-60-220
+        }
+        else{
+            this.left += this.directionX
+            this.top += this.directionY
+            }
+        
             
-        }*/
-    }
 
 
-
-
+        }
 }

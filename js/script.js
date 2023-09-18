@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
         console.log('start game')
         game = new Game();
         game.start()
+
     }
 
     startButton.addEventListener('click', function () {
@@ -17,7 +18,7 @@ window.addEventListener('load', () => {
 
 
     document.addEventListener('keydown', event => {
-        console.log('down', event)
+        //console.log('down', event)
         if (event.code === 'KeyA') {
             game.player.directionX = -1
           } else if (event.code === 'KeyD') {
@@ -31,7 +32,7 @@ window.addEventListener('load', () => {
     })
 
     document.addEventListener('keyup', event => {
-        console.log('up', event)
+        //console.log('up', event)
         if (
           event.code === 'KeyA' ||
           event.code === 'KeyD' 
@@ -46,9 +47,5 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-
-
 })
+

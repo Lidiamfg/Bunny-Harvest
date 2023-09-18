@@ -54,15 +54,14 @@ background: linear-gradient(
 
 #game-container {
     display: flex;
-    width: 100vw;   
-    padding: 20px 0px;
+    width: 100%;   
+    padding-top: 40px;
     justify-content: center;
 }
 
 #game-screen {
     display:none;
-    align-content: center;
-    padding: 20px 0;
+    align-content: center;a
     overflow: hidden;
     position: relative;
     background-image: url(../img/background.png);
@@ -70,5 +69,5 @@ background: linear-gradient(
     width: 45vw;*/
     background-repeat: no-repeat;
     background-size: cover;
-    
+        
 }
