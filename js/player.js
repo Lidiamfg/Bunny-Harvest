@@ -45,7 +45,7 @@ class Player {
              this.top += this.directionY
          }*/
 
-         if (this.left < 25 && this.top > 120 && this.top < this.gameScreen.clientHeight - 60 - 210) {
+         if (this.left < 25 && this.top > 120 /*&& this.top < this.gameScreen.clientHeight - 60 - 210*/) {
             this.left = 25;
         } else if (this.top < 130 && /*this.left > 10 &&*/ this.left < 220) {
             this.top = 130;

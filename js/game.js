@@ -19,7 +19,7 @@ class Game {
 
         this.apple.push(
         new Apple(this.gameScreen), 
-        /*new Apple(this.gameScreen), 
+        new Apple(this.gameScreen), 
         new Apple(this.gameScreen),
         new Apple(this.gameScreen),
         new Apple(this.gameScreen),
@@ -28,16 +28,18 @@ class Game {
         new Apple(this.gameScreen),
         new Apple(this.gameScreen),
         new Apple(this.gameScreen)
-        */)
+        )
         
         console.log(this.apple)
 
         this.apple.forEach((el)=>{
             el.updatePosition()
+            //console.log(this.apple.left)
+            //console.log(this.apple.top)
         })
         
         this.gameLoop()
-        
+      
 
 
 
@@ -46,7 +48,6 @@ class Game {
     gameLoop() {
         this.update()
         requestAnimationFrame(() => this.gameLoop())
-        console.log(this.player.left + " " + this.player.top)
     }
 
     update() {
