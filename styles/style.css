@@ -29,7 +29,7 @@ background: linear-gradient(
     height: 220px;
     }
 
-#start-button {
+body button {
     margin-top: 50px;
     font-size: 30px;
     background-color: #009933;
@@ -70,4 +70,9 @@ background: linear-gradient(
     background-repeat: no-repeat;
     background-size: cover;
         
+}
+
+#game-end {
+    display:none;
+    /*align-content: center;*/
 }

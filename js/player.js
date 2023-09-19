@@ -28,43 +28,27 @@ class Player {
     }
 
     updatePosition() {
-        /* if(this.left < 230 ){
-             this.left = 230;
-         }else if ( this.left > this.gameScreen.clientWidth-50-35){
-             this.left = this.gameScreen.clientWidth-50-35
-         } else{
-             this.left += this.directionX
-         }
-         
-         if(this.top < 60) {
-             this.top = 60;
-         } else if (this.top > this.gameScreen.clientHeight-60){
-             this.top = this.gameScreen.clientHeight-60
-         }
-          else {
-             this.top += this.directionY
-         }*/
-
-         if (this.left < 25 && this.top > 120 /*&& this.top < this.gameScreen.clientHeight - 60 - 210*/) {
-            this.left = 25;
-        } else if (this.top < 130 && /*this.left > 10 &&*/ this.left < 220) {
-            this.top = 130;
-        } else if (this.left < 225 && /*this.top > 40 &&*/ this.top < 130) {
-            this.left = 225;
-        } else if (this.top < 40 && /*this.left > 220 &&*/ this.left < this.gameScreen.clientWidth - 50 - 35) {
-            this.top = 40;
-        } else if (this.left > this.gameScreen.clientWidth - 50 - 35 && this.top < this.gameScreen.clientHeight - 60 - 200) {
-            this.left = this.gameScreen.clientWidth - 50 - 35;
-        } else if (this.top > this.gameScreen.clientHeight - 60 - 210 && this.left > this.gameScreen.clientWidth - 50 - 200) {
-            this.top = this.gameScreen.clientHeight - 60 - 210;
-        } else if (this.left > this.gameScreen.clientWidth - 50 - 210 && this.top > this.gameScreen.clientHeight - 60 - 210) {
-            this.left = this.gameScreen.clientWidth - 50 - 210;
-        } else if (this.top > this.gameScreen.clientHeight - 60 - 50 && this.left > 205) {
-            this.top = this.gameScreen.clientHeight - 60 - 50;
-        } else if (this.left < 215 && this.top > this.gameScreen.clientHeight - 60 - 210) {
-            this.left = 215;
-        } else if (this.top > this.gameScreen.clientHeight - 60 - 220 && this.left < 210) {
-            this.top = this.gameScreen.clientHeight - 60 - 220
+  
+         if (this.left < 40 && this.top > 140 /*&& this.top < this.gameScreen.clientHeight - 60 - 210*/) {
+            this.left = 40;
+        } else if (this.top < 150 && /*this.left > 10 &&*/ this.left < 210) {
+            this.top = 150;
+        } else if (this.left < 230 && /*this.top > 40 &&*/ this.top < 120) {
+            this.left = 230;
+        } else if (this.top < 70 && /*this.left > 220 &&*/ this.left < this.gameScreen.clientWidth - 28 - 35) {
+            this.top = 70;
+        } else if (this.left > this.gameScreen.clientWidth - 28 - 40 && this.top < this.gameScreen.clientHeight - 32 - 200) {
+            this.left = this.gameScreen.clientWidth - 28 - 40;
+        } else if (this.top > this.gameScreen.clientHeight - 32 - 230 && this.left > this.gameScreen.clientWidth - 28 - 200) {
+            this.top = this.gameScreen.clientHeight - 32 - 230;
+        } else if (this.left > this.gameScreen.clientWidth - 28 - 225 && this.top > this.gameScreen.clientHeight - 32 - 210) {
+            this.left = this.gameScreen.clientWidth - 28 - 225;
+        } else if (this.top > this.gameScreen.clientHeight - 32 - 65 && this.left > 225) {
+            this.top = this.gameScreen.clientHeight - 32 - 65;
+        } else if (this.left < 230 && this.top > this.gameScreen.clientHeight - 32 - 210) {
+            this.left = 230;
+        } else if (this.top > this.gameScreen.clientHeight - 32 - 230 && this.left < 230) {
+            this.top = this.gameScreen.clientHeight - 32 - 230
         }
         else {
             this.left += this.directionX
@@ -72,4 +56,21 @@ class Player {
         }
 
     }
+
+    didCollide(apple) {
+        const playerRect = this.element.getBoundingClientRect()
+        const appleRect = apple.element.getBoundingClientRect()
+
+        if(
+            playerRect.left < appleRect.right &&
+            playerRect.right > appleRect.left &&
+            playerRect.top < appleRect.bottom &&
+            playerRect.bottom > appleRect.top
+        ) {
+            return true
+        } else {
+            return false
+        }
+    }
+
 }
