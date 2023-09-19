@@ -64,7 +64,7 @@ background: linear-gradient(
     align-content: center;
     overflow: hidden;
     position: relative;
-    background-image: url(img/background.png);
+    background-image: url(/img/background.png);
     /*height: 88vh;
     width: 45vw;*/
     background-repeat: no-repeat;
