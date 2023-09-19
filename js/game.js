@@ -7,10 +7,13 @@ class Game {
         this.width = 651;
         this.player = new Player(this.gameScreen, 300, 275, 32, 28)
         this.apple = []
+        this.animateID = 0
         this.score = 0
         this.gameOver = false;
         this.counter = 30
         this.intervalId = 0
+        this.compLeft=[]
+        this.compTop=[]
 
     }
 
@@ -46,7 +49,7 @@ class Game {
 
        this.intervalId = setInterval(() => {
             this.counter -= 1;
-            console.log(this.counter)
+            //console.log(this.counter)
         }, 1000)
         
 
@@ -79,12 +82,47 @@ class Game {
             this.gameEndScreen.style.display = 'block'
   
         } else {
-            requestAnimationFrame(() => this.gameLoop())
+            this.animatedId=requestAnimationFrame(() => this.gameLoop())
         }
+
+        if(this.compLeft[0] < this.compLeft[1] ){   
+            if(this.animatedId % 40 === 0){
+                this.player.element.src = "img/bunny_right.png"
+            } else if (this.animatedId % 40 === 20){
+                this.player.element.src = "img/bunny_right2.png"
+            } 
+        } else if (this.compLeft[0] > this.compLeft[1]){
+            if(this.animatedId % 40 === 0){
+                this.player.element.src = "img/bunny_left.png"
+            } else if (this.animatedId % 40 === 20){
+                this.player.element.src = "img/bunny_left2.png"
+            } 
+        }
+
+        if(this.compTop[0] < this.compTop[1]){   
+            if(this.animatedId % 40 === 0){
+                this.player.element.src = "img/bunny_bot.png"
+            } else if (this.animatedId % 40 === 20){
+                this.player.element.src = "img/bunny_bot2.png"
+            }
+        } else if (this.compTop[0] > this.compTop[1]){
+            if(this.animatedId % 40 === 0){
+                this.player.element.src = "img/bunny_top.png"
+            } else if (this.animatedId % 40 === 20){
+                this.player.element.src = "img/bunny_top2.png"
+            } 
+        }
+
+        if(this.compTop[0] === this.compTop[1] && this.compLeft[0] === this.compLeft[1]){
+            if(this.animatedId % 40 === 0){    
+                this.player.element.src = "img/bunny2.png"
+             } else if (this.animatedId % 40 === 20) {
+                 this.player.element.src = "img/bunny.png"
+             }
+        }
+ 
+
     }
-
-
-
 
 
     update() {
@@ -96,6 +134,18 @@ class Game {
                 oneApple.element.remove()
             }
         })
+        
+        this.compLeft.push(this.player.left)
+        if (this.compLeft.length > 2){
+            this.compLeft.shift()
+        }
+
+        this.compTop.push(this.player.top)
+        if (this.compTop.length > 2){
+            this.compTop.shift()
+        }
+
+        console.log(this.compLeft)
         
 
     }

@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
     const startButton = document.getElementById('start-button')
     const restartButton = document.getElementById('restart-button')
+    this.animateID = 0
 
     let game
 
@@ -30,6 +31,7 @@ window.addEventListener('load', () => {
         //console.log('down', event)
         if (event.code === 'KeyA') {
             game.player.directionX = -1.5
+
           } else if (event.code === 'KeyD') {
             game.player.directionX = 1.5
           }
@@ -47,9 +49,11 @@ window.addEventListener('load', () => {
           event.code === 'KeyD' 
         ) {
           game.player.directionX = 0
+  
         }
         if (event.code === 'KeyW' || event.code === 'KeyS') {
           game.player.directionY = 0
+
         }
       })
 
