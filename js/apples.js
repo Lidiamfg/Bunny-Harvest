@@ -7,7 +7,7 @@ class Apple{
         this.height = 26
         this.element = document.createElement('img')
 
-        this.element.src = '../img/Apple.png'
+        this.element.src = 'img/Apple.png'
 
         this.element.style.position = 'absolute'
         this.element.style.left = `${this.left}px`
