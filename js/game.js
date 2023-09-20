@@ -7,13 +7,14 @@ class Game {
         this.width = 651;
         this.player = new Player(this.gameScreen, 300, 275, 32, 28)
         this.apple = []
-        this.animateID = 0
+        this.animatedId = 0
         this.score = 0
         this.gameOver = false;
         this.counter = 30
         this.intervalId = 0
         this.compLeft=[]
         this.compTop=[]
+        
 
     }
 
@@ -25,7 +26,15 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`
         this.gameScreen.style.width = `${this.width}px`
 
-        
+        /*let num = Math.floor(Math.random()*25 +5)
+        const generateApples = (num) => {
+            for (let i=0; i<num; i++){
+                this.apple.push(new Apple(this.gameScreen))
+            }  
+            return this.apple
+        }
+
+        generateApples(num);*/
 
         this.apple.push(
             new Apple(this.gameScreen),
@@ -59,6 +68,7 @@ class Game {
 
 
     gameLoop() {
+
         this.update()
 
         document.getElementById('score').innerText = this.score
@@ -75,15 +85,29 @@ class Game {
         if (this.score === this.apple.length) {
             this.gameOver = true;
             document.getElementById('finishing-line').innerText="You did great on your Harvest!"
+            let p = document.createElement('p')
+            p.classList.add('time')
+            p.innerText = `${30-this.counter}s`
+            let ref = document.getElementById('high-score')
+            this.gameEndScreen.insertBefore(p,ref.nextSibling)
+            let pList = document.querySelectorAll(".time")
+            if(pList.length > 3){
+                pList[3].remove()
+            }
+
         }
 
         if (this.gameOver) {
             this.gameScreen.style.display = 'none'
             this.gameEndScreen.style.display = 'block'
+            
   
         } else {
-            this.animatedId=requestAnimationFrame(() => this.gameLoop())
+            this.animatedId = requestAnimationFrame(() => this.gameLoop())
         }
+
+        
+
 
         if(this.compLeft[0] < this.compLeft[1] ){   
             if(this.animatedId % 40 === 0){
@@ -135,6 +159,8 @@ class Game {
             }
         })
         
+       
+
         this.compLeft.push(this.player.left)
         if (this.compLeft.length > 2){
             this.compLeft.shift()
@@ -145,7 +171,8 @@ class Game {
             this.compTop.shift()
         }
 
-        console.log(this.compLeft)
+        //console.log(this.compLeft)
+
         
 
     }
