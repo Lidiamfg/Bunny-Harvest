@@ -10,6 +10,7 @@ class Player {
         this.element = document.createElement('img')
 
         this.element.src = 'img/bunny.png'
+        this.element.classList.add('player')
 
         this.element.style.position = 'absolute'
         this.element.style.left = `${this.left}px`
@@ -72,5 +73,6 @@ class Player {
             return false
         }
     }
+
 
 }

@@ -26,6 +26,8 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`
         this.gameScreen.style.width = `${this.width}px`
 
+        
+
         /*let num = Math.floor(Math.random()*25 +5)
         const generateApples = (num) => {
             for (let i=0; i<num; i++){
@@ -38,7 +40,7 @@ class Game {
 
         this.apple.push(
             new Apple(this.gameScreen),
-            new Apple(this.gameScreen),
+           new Apple(this.gameScreen),
             new Apple(this.gameScreen),
             new Apple(this.gameScreen),
             new Apple(this.gameScreen),
@@ -79,20 +81,28 @@ class Game {
             this.gameOver = true
             if (this.score < this.apple.length){
                 document.getElementById('finishing-line').innerText="Better Luck Next Time..."
+                document.getElementById('ending-img').setAttribute("src","img/sad_bunny.png");
             }
         }
         
         if (this.score === this.apple.length) {
             this.gameOver = true;
             document.getElementById('finishing-line').innerText="You did great on your Harvest!"
-            let p = document.createElement('p')
-            p.classList.add('time')
-            p.innerText = `${30-this.counter}s`
-            let ref = document.getElementById('high-score')
-            this.gameEndScreen.insertBefore(p,ref.nextSibling)
-            let pList = document.querySelectorAll(".time")
-            if(pList.length > 3){
-                pList[3].remove()
+            document.getElementById('ending-img').setAttribute("src","img/happy_bunny.png");
+            
+
+            let li = document.createElement('li')
+            li.classList.add('time')
+            if (30-this.counter<10){
+                li.innerText = `0${30-this.counter}s`
+            }else{
+                li.innerText = `${30-this.counter}s`
+            }
+            document.getElementById("time-list").prepend(li)
+
+            let liList = document.querySelectorAll(".time")
+            if(liList.length > 5){
+                liList[5].remove()
             }
 
         }
@@ -107,7 +117,10 @@ class Game {
         }
 
         
-
+        const imgPlayer = document.querySelector(".player")
+        imgPlayer.addEventListener('mousedown', function () {
+            imgPlayer.src = "img/iron_man.png"
+          })
 
         if(this.compLeft[0] < this.compLeft[1] ){   
             if(this.animatedId % 40 === 0){
@@ -144,7 +157,8 @@ class Game {
                  this.player.element.src = "img/bunny.png"
              }
         }
- 
+        
+        
 
     }
 
@@ -159,7 +173,6 @@ class Game {
             }
         })
         
-       
 
         this.compLeft.push(this.player.left)
         if (this.compLeft.length > 2){

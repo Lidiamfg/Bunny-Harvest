@@ -3,8 +3,7 @@ Colors used:
 light blue #AFEEEE
 button green #009933*/
 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 body {
     padding: 0;
@@ -20,6 +19,7 @@ background: linear-gradient(
     white 80%,
     white 100%
 );
+
 }
 
 .logo-img {
@@ -30,7 +30,7 @@ background: linear-gradient(
     }
 
 body button {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 30px;
     background-color: #009933;
     color: white;
@@ -39,18 +39,27 @@ body button {
     border-radius: 5px;
 }
 
-#game-intro p {
-    margin-top: 50px;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+#game-intro .instructions {
+    font-family: 'Kalam',cursive;
+    font-size: 16px;
+    border: 4px double #009933;
+    border-radius: 10px;
+    width: 350px;
+    margin:40px auto 0;
 }
 
+#game-intro .keyboard-instructions {
+    margin-top: 30px;
+    font-size: 19px;
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
 
 .keyboard-img {
     width: auto;
     height: 80px;
-    margin-bottom: 100px;
-}
+   }
 
 #game-container {
     display: flex;
@@ -74,5 +83,43 @@ body button {
 
 #game-end {
     display:none;
+
 }
+
+#time-list {
+    text-align: center;
+    list-style-position: inside;
+    margin-right: 50px;
+    margin-bottom: 5px;
+}
+
+.image-title-end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#finishing-line{
+    font-size: 32px;
+    margin-left: 50px;
+    margin-top: 60px;
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+#high-score {
+    margin-top: 50px;
+    font-size: 18px;
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+#time-list li {
+    font-family: 'Kalam', cursive;
+    font-weight: 300;
+    list-style: ;
+}
+
+
 

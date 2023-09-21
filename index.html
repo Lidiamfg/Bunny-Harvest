@@ -15,24 +15,32 @@
             <img src="img/BunnyHarvest_logo.png" alt="Bunny Harvest Logo" class="logo-img" />
             <br />
             <button id="start-button">Start Game!</button>
-            <p>Use your keyboard to control your Bunny!</p>
+            <div class="instructions">
+                <p>Help the bunny pick all the apples.</p>
+                <p>Try to do your best time!</p>
+                <p>But don't forget, apples could be anywhere...</p>
+            </div>
+            <p class="keyboard-instructions">Use your keyboard to control your Bunny!</p>
             <img src="img/keyboard.png" alt="WASD commands" class="keyboard-img" />
         </div>
 
         <div id="game-container">
-                <div id="game-screen">
-                    <p>Apples picked: <span id="score">0</span></p>
-                    <p>Time: <span id="time">30</span>s</p>
-                </div>
-            
+            <div id="game-screen">
+                <p>Apples picked: <span id="score">0</span></p>
+                <p>Time: <span id="time">30</span>s</p>
+            </div>
+
         </div>
 
 
         <div id="game-end">
-            <img src="img/BunnyHarvest_logo.png" alt="Bunny Harvest Logo" class="logo-img" />
-            <h1 id="finishing-line">You did great on your Harvest!</h1>
+            <div class="image-title-end">
+                <img id="ending-img" src="img/happy_bunny.png" alt="Happy Bunny" class="ending-img" />
+                <span id="finishing-line"> You did great on your Harvest!</span>
+            </div>
             <button id="restart-button">Restart</button>
-            <p id="high-score">Time Record:</p>
+            <p id="high-score">Time Record</p>
+            <ol id="time-list"></ol>
         </div>
     </main>
 

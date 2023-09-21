@@ -39,10 +39,10 @@ class Apple{
         /*} else if (this.top < 160 && this.left > 40 && this.left < 230) {
             this.top = 160;*/
 
-        } else if (this.left <= 235 && this.top <= 140) {
+        } else if (this.left <= 235 && this.top <= 150) {
             this.left = 235;
             if(this.top <= 70){
-                this.top = Math.floor(Math.random()*(140-70)+70);
+                this.top = Math.floor(Math.random()*(150-70)+70);
             }else {
                 this.top = this.top;
             }
@@ -55,7 +55,7 @@ class Apple{
                  this.left = this.left;
              }
 
-        } else if (this.left >= this.gameScreen.clientWidth - 24 - 45 && this.top <= this.gameScreen.clientHeight - 26 - 220) {
+        } else if (this.left >= this.gameScreen.clientWidth - 24 - 45 && this.top <= this.gameScreen.clientHeight - 26 - 230) {
             this.left = this.gameScreen.clientWidth - 24 - 45;
 
         /*} else if (this.top > this.gameScreen.clientHeight - 26 - 230 && this.left > this.gameScreen.clientWidth - 24 - 230) {
@@ -83,7 +83,7 @@ class Apple{
         /*} else if (this.left < 230 && this.top > this.gameScreen.clientHeight - 26 - 210) {
             this.left = 230;*/
 
-        } else if (this.top >= this.gameScreen.clientHeight - 26 - 230 && this.left <= 220) {
+        } else if (this.top >= this.gameScreen.clientHeight - 26 - 230 && this.left <= 230) {
             this.top = this.gameScreen.clientHeight - 26 - 230
             if(this.left <= 40){
                 this.left = Math.floor(Math.random()*(230-70)+70)
