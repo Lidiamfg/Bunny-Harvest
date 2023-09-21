@@ -49,6 +49,11 @@ body button {
     margin:40px auto 0;
 }
 
+.instructions p{
+    margin-top: 5px ;
+    margin-bottom: 5px;
+}
+
 #game-intro .keyboard-instructions {
     margin-top: 30px;
     font-size: 19px;
@@ -66,6 +71,7 @@ body button {
     width: 100%;   
     padding-top: 40px;
     justify-content: center;
+
 }
 
 #game-screen {
@@ -74,11 +80,32 @@ body button {
     overflow: hidden;
     position: relative;
     background-image: url(../img/background.png);
-    /*height: 88vh;
-    width: 45vw;*/
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Kalam', cursive;
         
+}
+
+#game-container .text {
+    width: 100px;
+    margin-top: 20px ;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.text p{
+    margin-top: 5px ;
+    margin-bottom: 5px;
+}
+
+
+/*.apple-pick {
+    
+}*/
+
+.text p img{
+    height: 26px;
+    width: 24px;
 }
 
 #game-end {
