@@ -3,7 +3,7 @@
 [Click here to see deployed game](https://github.com/Lidiamfg/Bunny-Harvest)
 
 ## Description
-Bunny Harvest is a game where the palyer has to help the bunny pick all the apples in the shortest time. The game ends when you can pick all the apples that appear in the map in random positions or, if you fall asleep, it will end after 30s.
+Bunny Harvest is a game where the player has to help the bunny pick all the apples in the shortest time. The game ends when you can pick all the apples that appear in the map in random positions or, if you fall asleep, it will end after 30s.
 
 ![giphy (1)](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTUxYjM0M2pqenMwaTlnM29uYjU3ZXFmbmpxeWp5Mm1leTdsMmE3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fBEMsUeGHdpsClFsxM/giphy.gif)
 
@@ -49,7 +49,7 @@ Bunny Harvest is a game where the palyer has to help the bunny pick all the appl
 
 ## player.js
 - Player ()
-    this.gameScreen
+    - this.gameScreen
     - this.left
     - this.top
     - this.height
@@ -63,7 +63,7 @@ Bunny Harvest is a game where the palyer has to help the bunny pick all the appl
 
 ## appples.js
 - Apple()
-    - this.gameScreen = gameScreen;
+    - this.gameScreen
     - this.left
     - this.top
     - this.width
